@@ -1,0 +1,46 @@
+<div id="show_data">正在載入文章列表⋯⋯</div>
+<script type="text/javascript">
+   //=====1==== JSON feed
+   var feedUrl = 'https://sharing-life-in-tw.blogspot.com/feeds/posts/default?max-results=9999&amp;alt=json-in-script&amp;callback=myFunc';
+  
+   //=====2==== 讀入 JSON 物件並處理資料
+   function myFunc(root) {
+      var html = [''];
+      var entries = root.feed.entry;
+      var date=0;
+      for(var i=0; i<entries.length; i++) {
+         if(entries[i].published.$t.substr(0,7) != date) {
+            html.push(' <a class="day-blue night fs-4 lh-lg" href="https://sharing-life-in-tw.blogspot.com/');
+         	html.push(entries[i].published.$t.substr(0,4));
+            html.push('/');
+            html.push(entries[i].published.$t.substr(5,2));
+         	html.push('/" style="text-decoration:none;" >');
+         	html.push(entries[i].published.$t.substr(0,4));
+            html.push(' 年 ');
+            html.push(entries[i].published.$t.substr(5,2));
+            html.push(' 月');
+         	html.push('<'+'/a>');
+            html.push('<'+'br />');
+            date = entries[i].published.$t.substr(0,7);
+         }
+         html.push('<'+'li>')
+         html.push(entries[i].published.$t.substr(5,2));
+         html.push('/');
+         html.push(entries[i].published.$t.substr(8,2));
+         html.push('： <a class="day-blue night lh-base" href="');
+         html.push(entries[i].link[4].href);   //擷取文章網址
+         html.push('" style="text-decoration:none;" >');
+         html.push(entries[i].title.$t);   //擷取文章標題
+         html.push('<'+'/a>');
+         html.push('<'+'/li>');
+      }
+      document.getElementById("show_data").innerHTML = html.join('');
+   }
+  
+   //=====3==== 產生匯入外部 Javascript 檔案的語法
+   function IncludeJavaScript(jsFile)  {
+      document.write('<'+'script type="text/javascript" src="'+ jsFile + '"><'+'/script>');
+   }
+   //=====4==== 進行匯入 DATA API
+   IncludeJavaScript(feedUrl);
+</script>
