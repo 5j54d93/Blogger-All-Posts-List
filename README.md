@@ -1,8 +1,8 @@
 # Blogger All Post List
 
-Fetch data from Google Blogger API call to list all posts of a blog.
+Fetch data from Google Blogger API to list all posts of a blog by time.
 
-[Demo page](https://sharing-life-in-tw.blogspot.com/p/all-posts.html)
+> Demo page：[**sharing-life-in-tw.blogspot.com/p/all-posts.html**](https://sharing-life-in-tw.blogspot.com/p/all-posts.html)
 
 ## URL
 
