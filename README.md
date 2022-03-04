@@ -1,5 +1,10 @@
 # Blogger All Post List
 
+[![CodeQL](https://github.com/5j54d93/Blogger-All-Post-List/actions/workflows/codeql.yml/badge.svg)](https://github.com/5j54d93/Blogger-All-Post-List/actions/workflows/codeql.yml)
+![GitHub](https://img.shields.io/github/license/5j54d93/Blogger-All-Post-List)
+![GitHub Repo stars](https://img.shields.io/github/stars/5j54d93/Blogger-All-Post-List)
+![GitHub repo size](https://img.shields.io/github/repo-size/5j54d93/Blogger-All-Post-List)
+
 Fetch data from Google Blogger API to list all posts of a blog by time.
 
 <img src="https://github.com/5j54d93/Blogger-All-Post-List/blob/main/.github/Assets/Demo.gif" width='100%' height='100%'/>
