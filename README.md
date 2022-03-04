@@ -6,7 +6,9 @@ Fetch data from Google Blogger API to list all posts of a blog by time.
 
 > Demo page：[**sharing-life-in-tw.blogspot.com/p/all-posts.html**](https://sharing-life-in-tw.blogspot.com/p/all-posts.html)
 
-## URL
+## Explanation
+
+### URL
 
 ```js
 var feedUrl = 'https://sharing-life-in-tw.blogspot.com/feeds/posts/default?max-results=9999&amp;alt=json-in-script&amp;callback=myFunc';
@@ -14,7 +16,7 @@ var feedUrl = 'https://sharing-life-in-tw.blogspot.com/feeds/posts/default?max-r
 
 You could change `sharing-life-in-tw.blogspot.com` to your Blogger url.
 
-## Separate Posts by Month
+### Separate Posts by Month
 
 ```js
 if(entries[i].published.$t.substr(0,7) != date) {
@@ -33,7 +35,7 @@ if(entries[i].published.$t.substr(0,7) != date) {
 }
 ```
 
-## Display Posts by List
+### Display Posts by List
 
 ```js
 html.push('<'+'li>')
@@ -47,3 +49,7 @@ html.push(entries[i].title.$t);
 html.push('<'+'/a>');
 html.push('<'+'/li>');
 ```
+
+## License：MIT
+
+This package is [MIT licensed](https://github.com/5j54d93/Blogger-All-Post-List/blob/main/LICENSE).
